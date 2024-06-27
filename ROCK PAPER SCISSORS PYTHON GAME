@@ -1,0 +1,32 @@
+import random
+def game():
+  def check(computer , user):
+    if(computer == user):
+     return 0
+    if(computer == 0 and user == 1):
+     return -1
+    if(computer == 1 and user == 2):
+     return -1
+    if(computer == 2 and user == 0):
+     return -1
+    return 1
+  computer = random.randint(0,2)
+  user = int(input(" ARE YOU READY FOR ROCK,PAPER,SCISSORS SELECT -: 0 for rock , 1 for scissor , 2 for paper "))
+  score = check(computer , user)
+  print("you :",user)
+  print("comp :",computer)
+  if(score == 0):
+   print("draw")
+  if(score == -1):
+   print("you lose")
+  if(score == 1):
+   print("you win")
+game()
+play_again = input("do you want to play again? (y/n) ").lower()
+while(play_again == "y"):
+    game()
+    play_again = input("do you want to play again? (y/n) ").lower()
+else:
+    print("quit")
+    print("THANKS FOR PLAYING")
+        
