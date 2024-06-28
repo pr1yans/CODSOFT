@@ -1,0 +1,55 @@
+def todolist():
+  Task = []
+  while True:
+    print("------ TO DO LIST------")
+    print("PRESS 1 -> ADD TASK")
+    print("PRESS 2 -> SHOW TASK")
+    print("PRESS 3 -> DELETE TASK")
+    print("PRESS 4 -> MARKS AS DONE")
+    print("PRESS 5 -> EXIT")
+    user = int(input("ENTER YOUR CHOICE "))
+
+    if (user == 1):
+      numtask = int(input("Enter your number of tasks ->  "))
+      for i in range(numtask):
+        Tasks = input("Enter your Task ->  ")
+        Task.append(Tasks)
+        print(f"Task {Tasks} added to the list")
+
+    elif (user == 2):
+      print("your tasks are -> ")
+      for i in range(len(Task)):
+        print(f"{i+1} -> {Task[i]}")
+
+    elif (user == 3):
+      for i, Tasks in enumerate(Task):
+        print(f"{i+1} -> {Task[i]}")
+      index = int(input("Enter the index of the task you want to delete ->  "))
+      if index > 0 and index <= len(Task):
+        Task.pop(index - 1)
+        print("Task deleted successfully")
+      else:
+        print("Invalid index")
+
+    elif (user == 4):
+      for i, Tasks in enumerate(Task):
+        print(f"{i+1} -> {Task[i]}")
+        index = int(
+            input("Enter the index of the task you want to mark as done ->  "))
+        if index > 0 and index <= len(Task):
+          Task[index - 1] = f"[DONE] {Task[index-1]}"
+          print("Task marked as done")
+        else:
+          print("Invalid index")
+
+    elif (user == 5):
+      print("Thank you for using our to do list app")
+      break
+
+    else:
+      print("Invalid choice, please try again.")
+
+
+todolist()
+if __name__ == "__main__":
+  todolist()
