@@ -1,0 +1,59 @@
+import math
+
+print("Welcome to the calculator!")
+while True:
+    print("Please select an operation:")
+    print("1. Addition")
+    print("2. Substraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Square")
+    print("6. Square root")
+    print("7. Cube")
+    print("8. Cube root")
+    print("9. Logarithm")
+    print("10. Exit")
+    user = int(input("Enter your choice:  "))
+    if user == 1:
+        n1 = float(input("Enter the first number:  "))
+        n2 = float(input("Enter the second number:  "))
+        sum = lambda n1, n2: n1 + n2
+        print("The sum of the two numbers is -> ", sum(n1, n2))
+    elif user == 2:
+        n1 = float(input("Enter your first number:  "))
+        n2 = float(input("Enter your second number:  "))
+        sub = lambda n1, n2: n1 - n2
+        print("The substraction of the two numbers is -> ", sub(n1, n2))
+    elif user == 3:
+        n1 = float(input("Enter your first number:  "))
+        n2 = float(input("Enter your second number:  "))
+        mul = lambda n1, n2: n1 * n2
+        print("The multiplication of the two number is -> ", mul(n1, n2))
+    elif user == 4:
+        n1 = float(input("Enter your first number:  "))
+        n2 = float(input("Enter your second number:  "))
+        div = lambda n1, n2: n1/n2
+        print("The division of the two number is -> ", div(n1, n2))
+    elif user == 5:
+      n1 = float(input("Enter your number of which you want square of ->:  "))
+      sq = lambda n1: n1*n1
+      print("The square of your number is -> ", sq(n1))
+    elif user == 6:
+      n1 = float(input("Enter your number of which you want square root of ->:  "))
+      sqroot = lambda n1: math.sqrt(n1)
+      print("The square root of your number is -> ", sqroot(n1))
+    elif user == 7:
+      n1 = float(input("Enter your number of which you want cube of ->:  "))
+      cb = lambda n1: n1*n1*n1
+      print("The square of your number is -> ", cb(n1))
+    elif user == 8:
+      n1 = float(input("Enter your number of which you want cube root of ->:  "))
+      cbroot = lambda n1: n1**(1/3)
+      print("The cube root of your number is -> ", cbroot(n1))
+    elif user == 9:
+      n1 = float(input("Enter your number of which you want logarithm of ->:  "))
+      log = lambda n1: math.log(n1)
+      print("The logarithm of your number is -> ", log(n1)) 
+    elif user == 10:
+      print("Thank you for using our calculator")
+      break
